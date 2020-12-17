@@ -39,8 +39,8 @@ public class UserService {
 		userRepository.save(user);
 	}
 	
-	public Optional<User> findOne(String email) {
-		return userRepository.findById(email);
+	public User findOne(String email) {
+		return userRepository.findById(email).orElse(null);
 	}
 
 	public boolean isUserPresent(String email) {

@@ -35,7 +35,7 @@ public class TaskController {
 			return "views/taskForm";
 		}
 		String email = (String) session.getAttribute("email");
-		taskService.addTask(task, userService.findOne(email).orElse(null));
+		taskService.addTask(task, userService.findOne(email));
 		return "redirect:/users";
 	}
 }
